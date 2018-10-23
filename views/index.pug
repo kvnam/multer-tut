@@ -5,7 +5,7 @@ html
     link(rel='stylesheet', href='/scripts/bootstrap/dist/css/bootstrap.min.css', type='text/css')
   body
     div.container
-      div.row
+      div.row(class="mt-5 text-center")
         div.col-4
           a(href="/", class="btn btn-primary") Basic Form
         div.col-4
@@ -14,17 +14,20 @@ html
           a(href="/form/multi", class="btn btn-primary") Multi Form 
       div.row
         div.col-12(class="mt-3")
-          h1 Text Only Form
+          h1(class="text-center") Text Only Form
       div.row  
-        div.col-12(class="mt-5")
+        div(class="col-8 offset-md-2 mt-5 text-center")
           form(name="form", action="/basicform", method="post", enctype="multipart/form-data")
-            div.form-group
-              label(for="text1") Text 1
-              input(class="form-control", id="text1", name="text1", placeholder="Enter text 1")
-            div.form-group
-              label(for="text2") Text 2
-              input(class="form-control", id="text2", name="text2", placeholder="Enter text 2")
-            div.form-group
-              label(for="text3") Text 3
-              input(class="form-control", id="text3", name="text3", placeholder="Enter text 3")
+            div(class="input-group mb-3")
+              div(class="input-group-prepend")
+                span(class="input-group-text", id="inputGroup-default") Text Field
+              input(type='text', id='text1', placeholder='Enter text 1', name='text1', class='form-control')
+            div(class="input-group mb-3")
+              div(class="input-group-prepend")
+                span(class="input-group-text", id="inputGroup-default") Text Field
+              input(type='text', id='text2', placeholder='Enter text 2', name='text2', class='form-control')
+            div(class="input-group mb-3")
+              div(class="input-group-prepend")
+                span(class="input-group-text", id="inputGroup-default") Text Field
+              input(type='text', id='text3', placeholder='Enter text 3', name='text3', class='form-control')
             button(type="submit", class="btn btn-secondary") Send Form

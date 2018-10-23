@@ -5,8 +5,7 @@ html
     link(rel='stylesheet', href='/scripts/bootstrap/dist/css/bootstrap.min.css', type='text/css')
   body
   div.container
-    h1= message
-    div.row
+    div.row(class="mt-5 text-center")
       div.col-4
         a(href="/", class="btn btn-primary") Basic Form
       div.col-4
@@ -15,20 +14,24 @@ html
         a(href="/form/multi", class="btn btn-primary") Multi Form
     div.row
       div.col-12(class="mt-3")
-        h1 Multipart form
+        h1(class="text-center") Multiple Files form
     div.row
-      div.col-12(class="mt-5")
+      div(class="col-8 offset-md-2 mt-5 text-center")
         form(action="/multiform", method="post", enctype="multipart/form-data")
-          div.form-group
-            label(for='file') File
-            input(type='file', id='file', name='file1')
-          div.form-group
-            label(for='file') File 2
-            input(type='file', id='file', name='file1')
-          div.form-group
-            label(for='text1') Text 1
+          div(class="input-group mb-3")
+            div(class="custom-file")
+              label(for='file1', class="custom-file-label") Choose File
+              input(type='file', id='file1', name='file1', class="custom-file-input")
+          div(class="input-group mb-3")
+            div(class="custom-file")
+              label(for='file2', class="custom-file-label") Choose File
+              input(type='file', id='file1', name='file2', class="custom-file-input")
+          div(class="input-group mb-3")
+            div(class="input-group-prepend")
+              span(class="input-group-text", id="inputGroup-default") Text Field
             input(type='text', id='text1', placeholder='Enter text 1', name='text1', class='form-control')
-          div.form-group
-            label(for='text2') Text 2
-            input(type='text', id='text2', placeholder='Enter text 2', name='text2', class='form-control')
+          div(class="input-group mb-3")
+            div(class="input-group-prepend")
+              span(class="input-group-text", id="inputGroup-default") Text Field
+            input(type='text', id='text1', placeholder='Enter text 1', name='text2', class='form-control')
           button(type="submit", class="btn btn-secondary") Send Form
