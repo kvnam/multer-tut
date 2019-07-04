@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha /**/*.tests.js"
+    "test": "mocha /**/*.tests.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Kavita N Ganguli",
   "license": "ISC",
@@ -16,6 +18,8 @@
     "express": "^4.16.3",
     "mocha": "^5.2.0",
     "multer": "^1.4.0",
-    "pug": "^2.0.3"
-  }
+    "pug": "^2.0.3",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
